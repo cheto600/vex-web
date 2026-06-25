@@ -19,7 +19,7 @@ export default function Hero() {
           so the cabin + seated man stay in view.
           md+: object-cover centered (desktop unchanged). */}
       <video
-        className="absolute inset-0 h-full w-full object-cover object-[38%_center] md:object-center"
+        className="absolute inset-0 h-full w-full object-cover object-[36%_center] md:object-center"
         src={VIDEO_URL}
         autoPlay
         loop
