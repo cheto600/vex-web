@@ -1,3 +1,5 @@
+import { useState } from 'react'
+import { Menu, X } from 'lucide-react'
 import AnimatedHeading from './AnimatedHeading'
 import FadeIn from './FadeIn'
 import WohnNowLogo from './WohnNowLogo'
@@ -5,12 +7,18 @@ import WohnNowLogo from './WohnNowLogo'
 const VIDEO_URL =
   'https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260405_171521_25968ba2-b594-4b32-aab7-f6b69398a6fa.mp4'
 
+const NAV_LINKS = ['Funktionen', 'Für Vermieter', 'Für Mieter', 'Preise']
+
 export default function Hero() {
+  const [menuOpen, setMenuOpen] = useState(false)
+
   return (
-    <div className="relative min-h-screen w-full overflow-hidden text-white">
-      {/* Background video — raw, no overlay */}
+    <div className="relative min-h-screen w-full overflow-hidden bg-black text-white">
+      {/* Background video — raw, no overlay.
+          Mobile: object-contain so the full frame (man + wooden house) stays visible.
+          md+: object-cover full-screen (desktop unchanged). */}
       <video
-        className="absolute inset-0 h-full w-full object-cover"
+        className="absolute inset-0 h-full w-full object-contain object-center md:object-cover"
         src={VIDEO_URL}
         autoPlay
         loop
@@ -26,23 +34,51 @@ export default function Hero() {
             <WohnNowLogo accent="#1D4ED8" base="#FFFFFF" size={24} />
 
             <div className="hidden items-center gap-8 md:flex">
-              {['Funktionen', 'Für Vermieter', 'Für Mieter', 'Preise'].map(
-                (link) => (
-                  <a
-                    key={link}
-                    href="#"
-                    className="text-sm transition-colors hover:text-gray-300"
-                  >
-                    {link}
-                  </a>
-                ),
-              )}
+              {NAV_LINKS.map((link) => (
+                <a
+                  key={link}
+                  href="#"
+                  className="text-sm transition-colors hover:text-gray-300"
+                >
+                  {link}
+                </a>
+              ))}
             </div>
 
-            <button className="rounded-lg bg-white px-6 py-2 text-sm font-medium text-black transition-colors hover:bg-gray-100">
+            {/* Desktop CTA */}
+            <button className="hidden rounded-lg bg-white px-6 py-2 text-sm font-medium text-black transition-colors hover:bg-gray-100 md:block">
               Kostenlos starten
             </button>
+
+            {/* Mobile hamburger — only visible on mobile */}
+            <button
+              className="flex items-center justify-center rounded-lg p-1 text-white md:hidden"
+              onClick={() => setMenuOpen((v) => !v)}
+              aria-label="Menü öffnen"
+              aria-expanded={menuOpen}
+            >
+              {menuOpen ? <X size={26} /> : <Menu size={26} />}
+            </button>
           </nav>
+
+          {/* Mobile menu panel — only visible on mobile */}
+          {menuOpen && (
+            <div className="liquid-glass mt-2 flex flex-col gap-1 rounded-xl p-3 md:hidden">
+              {NAV_LINKS.map((link) => (
+                <a
+                  key={link}
+                  href="#"
+                  className="rounded-lg px-3 py-2.5 text-base transition-colors hover:bg-white/10"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  {link}
+                </a>
+              ))}
+              <button className="mt-1 rounded-lg bg-white px-6 py-3 text-sm font-medium text-black transition-colors hover:bg-gray-100">
+                Kostenlos starten
+              </button>
+            </div>
+          )}
         </div>
 
         {/* Hero content */}
