@@ -1,5 +1,6 @@
 import AnimatedHeading from './AnimatedHeading'
 import FadeIn from './FadeIn'
+import WohnNowLogo from './WohnNowLogo'
 
 const VIDEO_URL =
   'https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260403_050628_c4e32401-fab4-4a27-b7a8-6e9291cd5959.mp4'
@@ -22,7 +23,7 @@ export default function Hero() {
         {/* Navbar */}
         <div className="px-6 pt-6 md:px-12 lg:px-16">
           <nav className="liquid-glass flex items-center justify-between rounded-xl px-4 py-2">
-            <div className="text-2xl font-semibold tracking-tight">VEX</div>
+            <WohnNowLogo accent="#1D4ED8" base="#FFFFFF" size={24} />
 
             <div className="hidden items-center gap-8 md:flex">
               {['Story', 'Investing', 'Building', 'Advisory'].map((link) => (
