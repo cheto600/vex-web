@@ -15,11 +15,11 @@ export default function Hero() {
   return (
     <div className="relative min-h-screen w-full overflow-hidden bg-black text-white">
       {/* Background video — raw, no overlay.
-          Mobile: object-cover (full screen) with the frame shifted right
+          Mobile: object-cover (full screen) with the frame shifted left
           so the cabin + seated man stay in view.
           md+: object-cover centered (desktop unchanged). */}
       <video
-        className="absolute inset-0 h-full w-full object-cover object-[72%_center] md:object-center"
+        className="absolute inset-0 h-full w-full object-cover object-[28%_center] md:object-center"
         src={VIDEO_URL}
         autoPlay
         loop
