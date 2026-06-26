@@ -27,6 +27,10 @@ export default function Hero() {
         playsInline
       />
 
+      {/* Frosted-glass / plastic film over the video.
+          Softens the pixels so the video looks cleaner. Foreground stays sharp. */}
+      <div className="pointer-events-none absolute inset-0 z-[5] bg-white/[0.04] backdrop-blur-[3px]" />
+
       {/* Foreground */}
       <div className="relative z-10 flex min-h-screen flex-col">
         {/* Navbar */}
@@ -94,7 +98,7 @@ export default function Hero() {
         </FadeIn>
 
         {/* Hero content */}
-        <div className="flex flex-1 flex-col justify-end -translate-y-[2vh] px-6 pb-12 md:translate-y-[3vh] md:px-12 lg:px-16 lg:pb-16">
+        <div className="flex flex-1 flex-col justify-end -translate-y-[4vh] px-6 pb-12 md:translate-y-[6vh] md:px-12 lg:px-16 lg:pb-16">
           <div>
             {/* Left column */}
             <div className="max-w-xl">
