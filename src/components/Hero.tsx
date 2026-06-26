@@ -94,7 +94,7 @@ export default function Hero() {
         </FadeIn>
 
         {/* Hero content */}
-        <div className="flex flex-1 flex-col justify-end px-6 pb-12 md:px-12 lg:px-16 lg:pb-16">
+        <div className="flex flex-1 flex-col justify-end -translate-y-[2vh] px-6 pb-12 md:translate-y-[3vh] md:px-12 lg:px-16 lg:pb-16">
           <div>
             {/* Left column */}
             <div className="max-w-xl">
