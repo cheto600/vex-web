@@ -95,7 +95,7 @@ export default function Hero() {
 
               <FadeIn delay={800} duration={1000}>
                 <p className="mb-5 max-w-md text-base text-gray-200 md:text-lg">
-                  WohnNow verbindet Vermieter und Mieter – Schäden einfach per
+                  WohnNow verbindet Vermieter und Mieter. Schäden einfach per
                   App melden, Status verfolgen, schneller erledigt.
                 </p>
               </FadeIn>
