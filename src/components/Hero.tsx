@@ -82,9 +82,20 @@ export default function Hero() {
           )}
         </div>
 
+        {/* Top-center tagline (plain text, no card) */}
+        <FadeIn
+          delay={1400}
+          duration={1000}
+          className="px-6 pt-10 text-center md:pt-14"
+        >
+          <span className="text-lg font-light md:text-xl lg:text-2xl">
+            Melden. Sehen. Erledigt.
+          </span>
+        </FadeIn>
+
         {/* Hero content */}
         <div className="flex flex-1 flex-col justify-end px-6 pb-12 md:px-12 lg:px-16 lg:pb-16">
-          <div className="lg:grid lg:grid-cols-2 lg:items-end">
+          <div>
             {/* Left column */}
             <div className="max-w-xl">
               <AnimatedHeading
@@ -108,17 +119,6 @@ export default function Hero() {
                   <button className="liquid-glass rounded-lg border border-white/20 px-8 py-3 font-medium text-white transition-colors hover:bg-white hover:text-black">
                     So funktioniert's
                   </button>
-                </div>
-              </FadeIn>
-            </div>
-
-            {/* Right column */}
-            <div className="mt-8 flex items-end justify-start lg:mt-0 lg:justify-end">
-              <FadeIn delay={1400} duration={1000}>
-                <div className="liquid-glass rounded-xl border border-white/20 px-6 py-3">
-                  <span className="text-lg font-light md:text-xl lg:text-2xl">
-                    Melden. Sehen. Erledigt.
-                  </span>
                 </div>
               </FadeIn>
             </div>
