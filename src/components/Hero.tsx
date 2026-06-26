@@ -36,7 +36,7 @@ export default function Hero() {
         {/* Navbar */}
         <div className="px-6 pt-6 md:px-12 lg:px-16">
           <nav className="liquid-glass flex items-center justify-between rounded-xl px-4 py-2">
-            <WohnNowLogo accent="#1D4ED8" base="#FFFFFF" size={24} />
+            <WohnNowLogo accent="#EA580C" base="#FFFFFF" size={24} />
 
             <div className="hidden items-center gap-8 md:flex">
               {NAV_LINKS.map((link) => (
